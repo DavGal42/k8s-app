@@ -7,7 +7,7 @@ spec:
   project: default
 
   source:
-    repoURL: https://github.com/DavGal42/practice_argocd.git
+    repoURL: https://github.com/DavGal42/k8s-app.git
     targetRevision: HEAD
     path: ./
 
