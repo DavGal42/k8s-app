@@ -1,4 +1,4 @@
-namespace: test
+namespace: prod
 
 frontend:
   image: davidgalstyan/frontend-app:latest
@@ -25,7 +25,7 @@ backend:
     HOST: localhost
     APP_NAME: Lessons
     APP_DESCRIPTION: Devops lessons REST API
-    NODE_ENV: local
+    NODE_ENV: production
 
   service:
     type: ClusterIP

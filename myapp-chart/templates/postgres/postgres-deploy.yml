@@ -2,8 +2,9 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: postgres-deploy
+  namespace: {{ .Values.namespace }}
 spec:
-  replicas: 2
+  replicas: {{ .Values.postgres.replicas }}
   selector:
     matchLabels:
       app: postgres
@@ -14,9 +15,9 @@ spec:
     spec:
       containers:
       - name: postgres
-        image: postgres
+        image: {{ .Values.postgres.image }}
         ports:
-        - containerPort: 5432
+        - containerPort: {{ .Values.postgres.containerPort }}
         volumeMounts:
         - name: postgres-storage
           mountPath: /var/lib/postgresql/data
@@ -29,5 +30,5 @@ spec:
       volumes:
       - name: postgres-storage
         hostPath:
-          path: /data/postgres
+          path: {{ .Values.postgres.volume.path }}
           type: DirectoryOrCreate

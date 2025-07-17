@@ -2,8 +2,9 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: frontend
+  namespace: {{ .Values.namespace }}
 spec:
-  replicas: 2
+  replicas: {{ .Values.frontend.replicas }}
   selector:
     matchLabels:
       app: frontend
@@ -14,6 +15,6 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: davidgalstyan/frontend-app:latest
+        image: {{ .Values.frontend.image }}
         ports:
-        - containerPort: 80
+        - containerPort: {{ .Values.frontend.containerPort }}
