@@ -2,7 +2,7 @@ namespace: dev
 
 frontend:
   image: davidgalstyan/frontend-app:latest
-  replicas: 2
+  replicas: 1
   containerPort: 80
   service:
     type: NodePort
@@ -13,7 +13,7 @@ frontend:
 
 backend:
   image: davidgalstyan/backend-app:latest
-  replicas: 2
+  replicas: 1
   containerPort: 7000
 
   config:
@@ -35,7 +35,7 @@ backend:
 
 postgres:
   image: postgres
-  replicas: 2
+  replicas: 1
   containerPort: 5432
 
   config:

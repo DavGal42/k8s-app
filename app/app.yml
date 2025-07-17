@@ -12,11 +12,11 @@ spec:
     path: myapp-chart
     helm:
       valueFiles:
-        - values.yaml
+        - ../values/dev-values.yml
 
   destination:
     server: https://kubernetes.default.svc
-    namespace: dev
+    namespace: default
 
   syncPolicy:
     automated:
