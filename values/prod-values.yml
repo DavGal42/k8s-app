@@ -50,3 +50,16 @@ postgres:
 
   volume:
     path: /data/postgres
+
+
+ingress:
+  enabled: true
+  name: my-app-ingress
+  host: myapp.com
+  paths:
+    - path: /
+      service: frontend-service
+      port: 80
+    - path: /api
+      service: backend-service
+      port: 7000
