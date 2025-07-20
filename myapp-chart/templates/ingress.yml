@@ -5,6 +5,7 @@ metadata:
   name: {{ .Values.ingress.name }}
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
+  namespace: {{ .Values.namespace }}
 spec:
   rules:
     - host: {{ .Values.ingress.host }}
