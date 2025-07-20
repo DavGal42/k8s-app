@@ -9,6 +9,13 @@ frontend:
     port: 80
     targetPort: 80
     nodePort: 31000
+  resources:
+    requests:
+      cpu: 250m
+      memory: 256Mi
+    limits:
+      cpu: 500m
+      memory: 512Mi
 
 
 backend:
@@ -32,6 +39,14 @@ backend:
     port: 7000
     targetPort: 7000
 
+  resources:
+    requests:
+      cpu: 500m
+      memory: 512Mi
+    limits:
+      cpu: 1
+      memory: 1Gi
+
 
 postgres:
   image: postgres
@@ -50,6 +65,13 @@ postgres:
 
   volume:
     path: /data/postgres
+  resources:
+    requests:
+      cpu: 500m
+      memory: 1Gi
+    limits:
+      cpu: 1
+      memory: 2Gi
 
 
 ingress:

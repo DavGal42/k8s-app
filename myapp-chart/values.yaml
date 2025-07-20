@@ -2,7 +2,7 @@ namespace: test
 
 frontend:
   image: davidgalstyan/frontend-app:latest
-  replicas: 2
+  replicas: 1
   containerPort: 80
   service:
     type: NodePort
@@ -10,10 +10,18 @@ frontend:
     targetPort: 80
     nodePort: 31000
 
+  resources:
+    requests:
+      cpu: 100m
+      memory: 128Mi
+    limits:
+      cpu: 250m
+      memory: 256Mi
+
 
 backend:
   image: davidgalstyan/backend-app:latest
-  replicas: 2
+  replicas: 1
   containerPort: 7000
 
   config:
@@ -32,10 +40,18 @@ backend:
     port: 7000
     targetPort: 7000
 
+  resources:
+    requests:
+      cpu: 200m
+      memory: 256Mi
+    limits:
+      cpu: 500m
+      memory: 512Mi
+
 
 postgres:
   image: postgres
-  replicas: 2
+  replicas: 1
   containerPort: 5432
 
   config:
@@ -50,6 +66,14 @@ postgres:
 
   volume:
     path: /data/postgres
+
+  resources:
+    requests:
+      cpu: 250m
+      memory: 512Mi
+    limits:
+      cpu: 500m
+      memory: 1Gi
 
 
 ingress:

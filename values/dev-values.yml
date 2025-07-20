@@ -9,6 +9,13 @@ frontend:
     port: 80
     targetPort: 80
     nodePort: 31000
+  resources:
+    requests:
+      cpu: 50m
+      memory: 64Mi
+    limits:
+      cpu: 100m
+      memory: 128Mi
 
 
 backend:
@@ -26,6 +33,13 @@ backend:
     APP_NAME: Lessons
     APP_DESCRIPTION: Devops lessons REST API
     NODE_ENV: development
+  resources:
+    requests:
+      cpu: 100m
+      memory: 128Mi
+    limits:
+      cpu: 250m
+      memory: 256Mi
 
   service:
     type: ClusterIP
@@ -50,6 +64,13 @@ postgres:
 
   volume:
     path: /data/postgres
+  resources:
+    requests:
+      cpu: 150m
+      memory: 256Mi
+    limits:
+      cpu: 300m
+      memory: 512Mi
 
 
 ingress:
