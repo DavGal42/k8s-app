@@ -4,7 +4,7 @@ This project contains a microservices-based application deployed in Kubernetes u
 
 ## Project Structure
 
-```
+```bash
 app/
     └── app.yml
 myapp-chart/
@@ -42,7 +42,7 @@ values/
   
     - In the `dev` environment
     
-      ```
+      ```bash
        helm install myapp ./myapp-chart \
          -f values/dev-values.yml \
          --create-namespace \
@@ -51,7 +51,7 @@ values/
     
     - For production:
     
-      ```
+      ```bash
         helm install myapp ./myapp-chart \
           -f values/prod-values.yml \
           --create-namespace \
@@ -63,6 +63,6 @@ values/
   - Install ArgoCD
   - Create an ArgoCD application
 
-     ```
+     ```bash
      kubectl apply -f app.yml
      ```
