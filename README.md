@@ -1,8 +1,8 @@
-# Kubernetes Application with Helm and ArgoCD
+# <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Objects/Memo.webp" alt="Memo" width="50" height="50" /> Kubernetes Application with Helm and ArgoCD
 
 This project contains a microservices-based application deployed in Kubernetes using Helm charts and ArgoCD application.
 
-## Project Structure
+## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Objects/Card Index Dividers.webp" alt="Card Index Dividers" width="30" height="30" /> Project Structure
 
 ```bash
 app/
@@ -32,7 +32,7 @@ values/
     └── prod-values.yml
 ```
 
-## Installation Guide
+## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Travel and Places/Rocket.webp" alt="Rocket" width="30" height="30" /> Installation Guide
 
 - Using Helm
   
